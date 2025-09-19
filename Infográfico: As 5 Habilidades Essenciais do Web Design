@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: As 5 Habilidades Essenciais do Web Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Elegante com Laranja -->
+    <!-- Application Structure Plan: Uma SPA de rolagem única com uma narrativa linear que guia o usuário através das cinco habilidades essenciais de web design. A estrutura é dividida em seções temáticas, cada uma focada em uma habilidade. Esta abordagem foi escolhida para transformar o conteúdo textual em uma experiência de aprendizado visual e sequencial, tornando os conceitos complexos mais fáceis de digerir. Um cabeçalho fixo com navegação por links de âncora permite acesso rápido a qualquer seção, melhorando a usabilidade. -->
+    <!-- Visualization & Content Choices: 1. Tipografia: Objetivo - Organizar. Visualização - Diagrama de Escala Tipográfica (HTML/CSS). Justificativa - Uma representação visual estática comunica a hierarquia de tamanhos de fonte de forma mais clara e imediata do que um texto descritivo. 2. Layout: Objetivo - Organizar. Visualização - Diagramas de Grid e Hierarquia (HTML/CSS). Justificativa - Conceitos espaciais como grids e alinhamento são mais bem compreendidos através de ilustrações visuais simples. 3. Cor: Objetivo - Comparar. Visualização - Gráfico de Donut da Regra 60-30-10 (Chart.js/Canvas). Justificativa - Um gráfico de donut é a maneira ideal de mostrar a composição e proporção, que é o cerne da regra 60-30-10. 4. Código: Objetivo - Organizar. Visualização - Cards de Tecnologia (HTML/CSS). Justificativa - Cards separam e apresentam informações distintas de forma limpa e moderna. 5. Conversão: Objetivo - Organizar. Visualização - Diagrama de Fluxo (HTML/CSS). Justificativa - Um fluxograma simplificado ilustra a progressão lógica da estratégia de conversão de forma eficaz. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9F9F9;
+            color: #475569;
+        }
+        .nav-link.active {
+            color: #F87060;
+            font-weight: 600;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            height: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .grid-col {
+            background-color: rgba(248, 112, 96, 0.1);
+            border: 1px dashed rgba(248, 112, 96, 0.5);
+            text-align: center;
+            font-size: 0.75rem;
+            color: #E85217;
+            padding: 0.5rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-xl font-bold text-[#475569]">Web Design Essencial</span>
+                <div class="hidden md:flex items-center space-x-8" id="nav-links">
+                    <a href="#tipografia" class="nav-link text-[#475569] hover:text-[#F87060] transition-colors duration-300">Tipografia</a>
+                    <a href="#layout" class="nav-link text-[#475569] hover:text-[#F87060] transition-colors duration-300">Layout</a>
+                    <a href="#cor" class="nav-link text-[#475569] hover:text-[#F87060] transition-colors duration-300">Cor</a>
+                    <a href="#codigo" class="nav-link text-[#475569] hover:text-[#F87060] transition-colors duration-300">Código</a>
+                    <a href="#conversao" class="nav-link text-[#475569] hover:text-[#F87060] transition-colors duration-300">Conversão</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <section class="text-center mb-24">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#E85217] mb-4">As 5 Habilidades de Web Design que Realmente Importam</h1>
+            <p class="max-w-3xl mx-auto text-lg text-[#475569]">
+                Um infográfico que detalha as cinco competências que diferenciam designers profissionais. Aprenda no que focar para elevar a qualidade dos seus projetos.
+            </p>
+        </section>
+
+        <div class="space-y-28">
+
+            <section id="tipografia" class="scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-sm font-bold uppercase text-[#F87060] mb-2">Habilidade 1</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-[#475569] mb-4">Tipografia: A Arte do Texto</h3>
+                        <p class="text-[#475569] mb-6">Designers profissionais usam um **sistema de escala tipográfica** para criar hierarquia e consistência. Isso envolve definir um tamanho de fonte base e escalar os títulos usando uma proporção, como a **Escala da Terça Maior (aumento de 25%)**.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <span class="text-2xl font-bold text-[#FFC914]">✔</span>
+                                <p><strong>Escolha de Fontes:</strong> Busque fontes únicas em plataformas como Fontshare para que seus designs se destaquem.</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-2xl font-bold text-[#FFC914]">✔</span>
+                                <p><strong>Altura da Linha:</strong> Use ~150% do tamanho da fonte em parágrafos para facilitar a leitura.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <div class="space-y-4">
+                            <p style="font-size: 3.052rem; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em;" class="text-[#E85217]">Título Principal (H1)</p>
+                            <p style="font-size: 2.441rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em;" class="text-[#E85217]">Título Secundário (H2)</p>
+                            <p style="font-size: 1.953rem; line-height: 1.3; font-weight: 700; letter-spacing: -0.01em;" class="text-[#475569]">Subtítulo (H3)</p>
+                            <p style="font-size: 1.563rem; line-height: 1.4; font-weight: 600;" class="text-[#475569]">Cabeçalho Menor (H4)</p>
+                            <p style="font-size: 1.25rem; line-height: 1.5; font-weight: 600;" class="text-[#475569]">Texto de Destaque</p>
+                            <p style="font-size: 1rem; line-height: 1.7;" class="text-[#475569]">Este é um parágrafo de texto base. Ele serve como fundamento para a escala, garantindo que o conteúdo principal seja perfeitamente legível e confortável aos olhos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="layout" class="scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-[#E85217]">Sistema de Grid de 12 Colunas</h4>
+                                <p class="text-[#475569] mb-4">A base de um layout flexível. Permite divisões em 2, 3, 4 ou 6 colunas, adaptando-se a qualquer dispositivo.</p>
+                                <div class="grid grid-cols-12 gap-2">
+                                    <div class="grid-col col-span-12">12</div>
+                                    <div class="grid-col col-span-6">6</div>
+                                    <div class="grid-col col-span-6">6</div>
+                                    <div class="grid-col col-span-4">4</div>
+                                    <div class="grid-col col-span-4">4</div>
+                                    <div class="grid-col col-span-4">4</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-[#E85217]">Hierarquia Visual</h4>
+                                <p class="text-[#475569]">Guie os olhos do usuário usando tamanho, contraste e alinhamento para destacar o que é mais importante.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                         <h2 class="text-sm font-bold uppercase text-[#F87060] mb-2">Habilidade 2</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-[#475569] mb-4">Layout: A Estrutura do Design</h3>
+                        <p class="text-[#475569] mb-6">Layouts profissionais não são acidentais. Eles são construídos sobre sistemas sólidos que garantem clareza e organização. Os três pilares são o **sistema de grid**, o **espaçamento consistente** (como o sistema de 8 pontos) e uma **hierarquia visual** bem definida.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cor" class="scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-sm font-bold uppercase text-[#F87060] mb-2">Habilidade 3</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-[#475569] mb-4">Cor: O Uso Intencional</h3>
+                        <p class="text-[#475569] mb-6">Bons designers não usam mais cores, eles as usam com mais propósito. A **regra 60-30-10** é um guia simples para criar equilíbrio: 60% para cores neutras, 30% para secundárias e 10% para destaques como botões e CTAs.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <span class="text-2xl font-bold text-[#FFC914]">✔</span>
+                                <p><strong>Use Opacidade:</strong> Crie variações de cor a partir da sua paleta principal ajustando a opacidade.</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-2xl font-bold text-[#FFC914]">✔</span>
+                                <p><strong>Priorize o Contraste:</strong> Garanta que o texto seja legível em todos os fundos. É crucial para a acessibilidade.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="colorRuleChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="codigo" class="scroll-mt-20">
+                 <div class="text-center">
+                    <h2 class="text-sm font-bold uppercase text-[#F87060] mb-2">Habilidade 4</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-[#475569] mb-4">Código: O Conhecimento Básico</h3>
+                    <p class="max-w-2xl mx-auto text-[#475569] mb-10">Para se destacar, é preciso ter familiaridade com código. Não é necessário ser um especialista, mas entender os fundamentos de HTML, CSS e JavaScript permite maior controle e personalização.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md border text-center">
+                        <p class="text-4xl mb-3">🧱</p>
+                        <h4 class="font-bold text-lg text-[#E85217]">HTML</h4>
+                        <p class="text-sm text-[#475569]">A estrutura e o esqueleto de todas as páginas web.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md border text-center">
+                        <p class="text-4xl mb-3">🎨</p>
+                        <h4 class="font-bold text-lg text-[#E85217]">CSS</h4>
+                        <p class="text-sm text-[#475569]">O estilo, as cores e o apelo visual do seu site.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md border text-center">
+                        <p class="text-4xl mb-3">✨</p>
+                        <h4 class="font-bold text-lg text-[#E85217]">JavaScript</h4>
+                        <p class="text-sm text-[#475569]">A interatividade, animações e funcionalidades dinâmicas.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="conversao" class="scroll-mt-20">
+                <div class="text-center">
+                    <h2 class="text-sm font-bold uppercase text-[#F87060] mb-2">Habilidade 5</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-[#475569] mb-4">Conversão: O Design para Ação</h3>
+                    <p class="max-w-3xl mx-auto text-[#475569] mb-12">Designers profissionais projetam com um objetivo em mente: levar o usuário a realizar uma ação. Isso envolve clareza, confiança e estratégia.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md border w-64">
+                        <p class="text-3xl font-bold text-[#FFC914] mb-2">1</p>
+                        <h4 class="font-semibold text-lg text-[#E85217]">Uma Página, Uma Meta</h4>
+                        <p class="text-sm text-[#475569]">Cada página deve ter um único objetivo claro, como vender um produto ou capturar um lead.</p>
+                    </div>
+                    <div class="text-2xl text-[#F87060] font-bold hidden md:block">→</div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border w-64">
+                        <p class="text-3xl font-bold text-[#FFC914] mb-2">2</p>
+                        <h4 class="font-semibold text-lg text-[#E85217]">CTAs Estratégicos</h4>
+                        <p class="text-sm text-[#475569]">Posicione chamadas para ação (CTAs) claras e visíveis para guiar o usuário.</p>
+                    </div>
+                     <div class="text-2xl text-[#F87060] font-bold hidden md:block">→</div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border w-64">
+                        <p class="text-3xl font-bold text-[#FFC914] mb-2">3</p>
+                        <h4 class="font-semibold text-lg text-[#E85217]">Confiança e Sentimento</h4>
+                        <p class="text-sm text-[#475569]">Use prova social, como depoimentos, para construir confiança e criar uma conexão emocional.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scroll-mt-20 py-12">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#E85217] mb-4">Laboratório de ✨ Inovação AI</h2>
+                    <p class="max-w-3xl mx-auto text-[#475569]">Explore ideias e snippets de código gerados por AI. Simplesmente descreva o que precisa.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row gap-4 mb-4">
+                        <input type="text" id="ai-input" placeholder="Ex: 'ideias de cores para um site de viagens' ou 'botão animado com CSS'" class="flex-grow p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F87060]">
+                        <button id="ai-generate-btn" class="bg-[#E85217] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[#D84727] transition-colors duration-300">
+                           Gerar Ideias
+                        </button>
+                    </div>
+                    <div id="ai-loading" class="hidden text-center text-[#475569] py-4">
+                        <span class="animate-spin inline-block mr-2 text-xl">⚙️</span> A gerar, por favor, aguarde...
+                    </div>
+                    <div id="ai-output" class="bg-gray-50 p-4 rounded-lg border border-gray-200 min-h-[200px] overflow-auto whitespace-pre-wrap">
+                        As suas ideias geradas por AI vão aparecer aqui.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="text-center mt-28 border-t pt-8">
+            <p class="text-[#475569]">Lembre-se: se não desistir, vence.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chartData = {
+                labels: ['60% Neutras', '30% Secundárias', '10% Destaque'],
+                datasets: [{
+                    label: 'Regra de Cor 60-30-10',
+                    data: [60, 30, 10],
+                    backgroundColor: [
+                        '#475569',
+                        '#F87060',
+                        '#FFC914'
+                    ],
+                    borderColor: '#F9F9F9',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            };
+
+            const chartConfig = {
+                type: 'doughnut',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                font: {
+                                    family: "'Inter', sans-serif",
+                                    size: 14,
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            };
+
+            const ctx = document.getElementById('colorRuleChart').getContext('2d');
+            new Chart(ctx, chartConfig);
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            const aiInput = document.getElementById('ai-input');
+            const aiButton = document.getElementById('ai-generate-btn');
+            const aiLoading = document.getElementById('ai-loading');
+            const aiOutput = document.getElementById('ai-output');
+
+            aiButton.addEventListener('click', async () => {
+                const query = aiInput.value;
+                if (!query) {
+                    aiOutput.textContent = 'Por favor, insira um pedido para gerar ideias.';
+                    return;
+                }
+
+                aiLoading.classList.remove('hidden');
+                aiOutput.textContent = '';
+                aiButton.disabled = true;
+
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const systemPrompt = "Atue como um assistente de web design especializado. Gere ideias criativas ou snippets de código para o tema fornecido. Se o pedido for sobre 'design' (cores, fontes, layout), forneça sugestões de paleta de cores, pares de fontes ou conceitos visuais. Se o pedido for sobre 'código' (botões, animações, componentes), gere um snippet HTML, CSS e JS relevante. A resposta deve ser útil, direta e formatada de forma clara, sem explicações extras além do que foi pedido. Use a língua portuguesa.";
+
+                const payload = {
+                    contents: [{ parts: [{ text: query }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                const fetchOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                };
+
+                let attempt = 0;
+                const maxAttempts = 3;
+                while (attempt < maxAttempts) {
+                    try {
+                        const response = await fetch(apiUrl, fetchOptions);
+                        if (!response.ok) {
+                            if (response.status === 429) {
+                                const delay = Math.pow(2, attempt) * 1000;
+                                await new Promise(res => setTimeout(res, delay));
+                                attempt++;
+                                continue;
+                            } else {
+                                throw new Error(`Erro: ${response.status} ${response.statusText}`);
+                            }
+                        }
+                        const result = await response.json();
+                        const text = result.candidates?.[0]?.content?.parts?.[0]?.text || 'Não foi possível gerar uma resposta. Tente novamente com um pedido diferente.';
+                        aiOutput.textContent = text;
+                        break;
+                    } catch (error) {
+                        aiOutput.textContent = `Ocorreu um erro: ${error.message}`;
+                        break;
+                    } finally {
+                        aiLoading.classList.add('hidden');
+                        aiButton.disabled = false;
+                    }
+                }
+
+                if (attempt === maxAttempts) {
+                    aiOutput.textContent = 'Demasiadas tentativas falhadas. Por favor, tente novamente mais tarde.';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
